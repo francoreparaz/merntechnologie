@@ -1,34 +1,21 @@
 import React,{useState} from "react";
-import axios from "axios"
- const CreateTask = () => {
-    const [inputTask, setInputTask] = useState("")
 
-   function handleChange(e){
-        setInputTask(e.target.value)
-    }
-    
-    function handleSubmit(e){
-        e.preventDefault()
-        axios.get("http://localhost:4000/api/task")
-        .then(res=>setInputTask(res.data))
-    }
+ const CreateTask = ({setInputTask,handleSubmit,Tasks,inputTask}) => {
   return (
     <div>
       <form onSubmit={handleSubmit}>
         <input 
          type="text"
+         value={inputTask}
          placeholder="create task" 
-         onChange={handleChange}
+         onChange={e=>setInputTask(e.target.value)}
          ></input>
         <input 
          type="submit"
         />
         <p>Tasks</p>
         <ul>
-           <li> {
-                
-            }
-            </li>
+        <p>{Tasks.map(tareas=><li>{tareas.title}</li>)}</p>
         </ul>
       </form>
     </div>
