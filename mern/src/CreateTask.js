@@ -15,7 +15,7 @@ import React,{useState} from "react";
         />
         <p>Tasks</p>
         <ul>
-        <p>{Tasks.map(tareas=><li>{tareas.title}</li>)}</p>
+        <p>{Tasks.map(x=><li>{x.title}</li>)}</p>
         </ul>
       </form>
     </div>

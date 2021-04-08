@@ -13,8 +13,9 @@ function App() {
        setInputTask("")
    }
    function peticion(){
-     axios.get("http://localhost:4000/api/task")
+     axios.post("http://localhost:4000/api/task")
      .then(res=>setTasks(res.data))
+     .catch(err=>console.log(err))
    }
   return (
     <div className="App">
